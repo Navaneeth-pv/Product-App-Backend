@@ -6,11 +6,18 @@ import { AppComponent } from './app.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ViewProductsComponent } from './view-products/view-products.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 const myRoute:Routes=[
   {
     path:"add",
     component:AddProductComponent
+  },
+  {
+    path:"view",
+    component:ViewProductsComponent
   }
 ]
 
@@ -18,12 +25,15 @@ const myRoute:Routes=[
   declarations: [
     AppComponent,
     AddProductComponent,
-    NavbarComponent
+    NavbarComponent,
+    ViewProductsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(myRoute)
+    RouterModule.forRoot(myRoute),
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
